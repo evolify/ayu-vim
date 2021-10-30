@@ -34,7 +34,7 @@ let s:palette.guide     = {'dark': "#2D3640",  'light': "#D9D8D7",  'mirage': "#
 let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#242B38"}
 let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
-let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
+let s:palette.fg_idle   = {'dark': "#819CA9",  'light': "#828C99",  'mirage': "#607080"}
 
 "}}}
 
@@ -87,19 +87,19 @@ exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 " Conceal, Cursor, CursorIM
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"    .s:fg_none        .s:bg_guide        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
-exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_comment     .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
 exe "hi! DiffChange"    .s:fg_tag         .s:bg_panel       .s:fmt_none
 exe "hi! DiffText"      .s:fg_fg          .s:bg_panel       .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
-exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
+exe "hi! VertSplit"     .s:fg_comment          .s:bg_none        .s:fmt_none
 exe "hi! Folded"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
+exe "hi! SignColumn"    .s:fg_fg_idle     .s:bg_none       .s:fmt_none
 "   Incsearch"
 
 exe "hi! MatchParen"    .s:fg_fg          .s:bg_bg          .s:fmt_undr
@@ -123,6 +123,8 @@ exe "hi! WildMenu"      .s:fg_bg          .s:bg_markup      .s:fmt_none
 exe "hi! TabLine"       .s:fg_fg          .s:bg_panel       .s:fmt_revr
 "   TabLineFill"
 "   TabLineSel"
+
+
 exe "hi! Title"         .s:fg_keyword     .s:bg_none        .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
@@ -188,8 +190,8 @@ exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
 "   qfLineNr"
 "   qfError"
 
-exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
-exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
+exe "hi! Conceal"         .s:fg_fg     .s:bg_none        .s:fmt_none
+exe "hi! CursorLineConceal" .s:fg_fg   .s:bg_line        .s:fmt_none
 
 
 " Terminal
@@ -245,6 +247,9 @@ exe "hi! GitGutterAdd"          .s:fg_string     .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
 exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
+
+" Telescope
+exe "hi! TelescopeBorder"       .s:fg_comment          .s:bg_none        .s:fmt_none
 
 "}}}
 
